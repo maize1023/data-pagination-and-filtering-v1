@@ -65,10 +65,25 @@ function addPagination(list) {
          clickedButton.classList.add('active');
       }
    });
+}
 
+
+
+function addSearchBar(){
+   const headerList = document.querySelector('.header');
+   const searchBar = `
+   <label for="search" class="student-search">
+     <span>Search by name</span>
+     <input id="search" placeholder="Search by name...">
+     <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+   </label>
+   `;
+
+   headerList.insertAdjacentHTML('beforeend', searchBar);
 }
 
 
 
 showPage(data, 1);
 addPagination(data);
+addSearchBar();

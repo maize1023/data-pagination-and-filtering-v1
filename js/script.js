@@ -6,6 +6,7 @@ FSJS Project 2 - Data Pagination and Filtering
 
 
 // 1ページに対して、9人の生徒を表示するファンクション
+//Function to display 9 students per page
 function showPage(list, page){
    const startIndex = (page * 9) - 9;
    const endIndex = page * 9;
@@ -34,6 +35,7 @@ function showPage(list, page){
 
 
 // ページネーションボタン作成のファンクション
+// add pagination buttons function
 function addPagination(list) {
   const numOfPages = Math.ceil(list.length / 9);
   const linkList = document.querySelector('.link-list');
@@ -52,6 +54,7 @@ function addPagination(list) {
 
 
    // ボタンがクリックされた時のイベント
+   // button click event
    linkList.addEventListener('click', (e)=>{
       if(e.target.tagName === 'BUTTON'){
          const previousActiveButton = linkList.querySelector('.active');
@@ -64,6 +67,7 @@ function addPagination(list) {
    });
 
 }
+
 
 
 showPage(data, 1);

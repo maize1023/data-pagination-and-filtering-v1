@@ -49,7 +49,22 @@ function addPagination(list) {
       const firstButton = linkList.firstElementChild.querySelector('button');
       firstButton.className = "active";
    }
+
+
+   // ボタンがクリックされた時のイベント
+   linkList.addEventListener('click', (e)=>{
+      if(e.target.tagName === 'BUTTON'){
+         const previousActiveButton = linkList.querySelector('.active');
+         if(previousActiveButton){
+            previousActiveButton.classList.remove('active');
+         }
+         const clickedButton = e.target;
+         clickedButton.classList.add('active');
+      }
+   });
+
 }
 
 
 showPage(data, 1);
+addPagination(data);

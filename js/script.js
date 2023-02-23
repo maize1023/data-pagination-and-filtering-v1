@@ -41,7 +41,7 @@ function addPagination(list) {
   const linkList = document.querySelector('.link-list');
   linkList.innerHTML = "";
 
-   for(let i = 0; i < numOfPages; i++ ){
+   for(let i = 1; i <= numOfPages; i++ ){
       const button = `
          <li>
             <button type="button">${i}</button>
@@ -69,6 +69,7 @@ function addPagination(list) {
 
 
 
+// extra credits
 function addSearchBar(){
    const headerList = document.querySelector('.header');
    const searchBar = `
@@ -81,6 +82,24 @@ function addSearchBar(){
 
    headerList.insertAdjacentHTML('beforeend', searchBar);
 }
+
+
+
+// function searchStudents(){
+
+//    ①
+//    ②
+//    ③if(couldnt find student){
+//       ""no results found""
+//    }
+// }
+
+
+
+
+
+
+
 
 
 

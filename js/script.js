@@ -31,4 +31,25 @@ function showPage(list, page){
    }
 }
 
+
+
+// ページネーションボタン作成のファンクション
+function addPagination(list) {
+  const numOfPages = Math.ceil(list.length / 9);
+  const linkList = document.querySelector('.link-list');
+  linkList.innerHTML = "";
+
+   for(let i = 0; i < numOfPages; i++ ){
+      const button = `
+         <li>
+            <button type="button">${i}</button>
+         </li>
+      `;
+      linkList.insertAdjacentHTML('beforeend', button);
+      const firstButton = linkList.firstElementChild.querySelector('button');
+      firstButton.className = "active";
+   }
+}
+
+
 showPage(data, 1);
